@@ -1,0 +1,16 @@
+:host
+{
+    margin-top: 25px;
+    width: 100%;
+}
+
+.dirrerentied-payments-table
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dirrerentied-payments-summ
+{
+    text-align: end;
+}

@@ -1,17 +1,21 @@
-<div class="calc-interface">
-    <calc-select-loan-type [(paymentTypeVal)]="loanCalc.selectedLoanPaymentType"></calc-select-loan-type>
-    <div class="calc-number-field-containter">
-        <calc-number-field 
-        [labelText]="loanCalc.loanAmount.label"
-        [(numberValue)]="loanCalc.loanAmount.numberValue"></calc-number-field>
-        <calc-number-field 
-        [labelText]="loanCalc.loanPeriodMonths.label"
-        [(numberValue)]="loanCalc.loanPeriodMonths.numberValue"></calc-number-field>
-        <calc-number-field [labelText]="loanCalc.annualInterestRate.label"
-        [(numberValue)]="loanCalc.annualInterestRate.numberValue"></calc-number-field>
+<div class="calc-main-info">
+    <div class="calc-interface">
+        <calc-select-loan-type [(paymentTypeVal)]="loanCalc.selectedLoanPaymentType"></calc-select-loan-type>
+        <div class="calc-number-field-containter">
+            <calc-number-field 
+            [labelText]="loanCalc.loanAmount.label"
+            [(numberValue)]="loanCalc.loanAmount.numberValue"></calc-number-field>
+            <calc-number-field 
+            [labelText]="loanCalc.loanPeriodMonths.label"
+            [(numberValue)]="loanCalc.loanPeriodMonths.numberValue"></calc-number-field>
+            <calc-number-field [labelText]="loanCalc.annualInterestRate.label"
+            [(numberValue)]="loanCalc.annualInterestRate.numberValue"></calc-number-field>
+        </div>
     </div>
+    <loan-info [monthlyPayment]="loanCalc.monthlyPayment"
+    [totalAmountPayments]="loanCalc.totalAmountPayments"
+    [totalAmountOverpayments]="loanCalc.totalAmountOverpayments"
+    [paymentType]="loanCalc.selectedLoanPaymentType"></loan-info>
 </div>
-<loan-info [monthlyPayment]="loanCalc.monthlyPayment"
-[totalAmountPayments]="loanCalc.totalAmountPayments"
-[totalAmountOverpayments]="loanCalc.totalAmountOverpayments"
-[paymentType]="loanCalc.selectedLoanPaymentType"></loan-info>
+<differentiated-payments-info *ngIf="loanCalc.selectedLoanPaymentType != 'annuity'"
+[dirrerentiedPayments]="loanCalc.differentedLoanPayment"></differentiated-payments-info>

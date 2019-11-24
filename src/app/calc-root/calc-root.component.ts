@@ -39,17 +39,16 @@ export class CalcRootComponent implements OnInit, DoCheck {
       let paymentsSumm: number = 0;
       let monthlyInterest: number = 0;
       this.loanCalc.differentedLoanPayment = [];
-      currentDate.setDate(0);
       while(amountPrincipalAmountLoan > 0){
         currentDate.setMonth(currentDate.getMonth() + 1);
         countDaysYear = currentDate.getFullYear() % 400 == 0 || (currentDate.getFullYear() % 100 != 0 && currentDate.getFullYear() % 4 == 0) ? 366 : 365;
         monthlyInterest = amountPrincipalAmountLoan * interestRate / countDaysYear * this.getCountDaysMonth(currentDate.getFullYear(), currentDate.getMonth());
-        this.loanCalc.differentedLoanPayment.push({date: `${currentDate.getMonth() + 1}/${currentDate.getFullYear()}`, 
-        payment: loanBody + monthlyInterest});
+        this.loanCalc.differentedLoanPayment.push({date: currentDate, 
+        summ: loanBody + monthlyInterest});
         amountPrincipalAmountLoan -= loanBody;
       }
       this.loanCalc.differentedLoanPayment.forEach((val)=>{
-        paymentsSumm += val.payment;
+        paymentsSumm += val.summ;
       });
       this.loanCalc.monthlyPayment = paymentsSumm / this.loanCalc.differentedLoanPayment.length;
       this.loanCalc.totalAmountPayments = paymentsSumm;

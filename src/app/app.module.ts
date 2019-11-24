@@ -8,6 +8,7 @@ import { CalcRootComponent } from './calc-root/calc-root.component';
 import { CalcNumberFieldComponent } from './calc-number-field/calc-number-field.component';
 import { CalcSelectLoanTypeComponent } from './calc-select-loan-type/calc-select-loan-type.component';
 import { LoanInfoComponent } from './loan-info/loan-info.component';
+import { DifferentiatedPaymentsInfoComponent } from './differentiated-payments-info/differentiated-payments-info.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { LoanInfoComponent } from './loan-info/loan-info.component';
     CalcNumberFieldComponent,
     CalcSelectLoanTypeComponent,
     LoanInfoComponent,
+    DifferentiatedPaymentsInfoComponent,
   ],
   imports: [
     BrowserModule,

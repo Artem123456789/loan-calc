@@ -1,0 +1,10 @@
+<table class="dirrerentied-payments-table" border="1">
+    <tr>
+        <th class="dirrerentied-payments-head">Date</th>
+        <th class="dirrerentied-payments-head">Summ</th>
+    </tr>
+    <tr *ngFor="let payment of dirrerentiedPayments;let index = i;">
+        <td class="dirrerentied-payments-value dirrerentied-payments-date">{{ payment.date | date:'yyyy/mm/dd' }}</td>
+        <td class="dirrerentied-payments-value dirrerentied-payments-summ">{{ payment.summ | currency:'USD':'symbol':'1.1-3' }}</td>
+    </tr>
+</table>

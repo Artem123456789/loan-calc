@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class LoanCalcService {
 
-  loanAmount = {label: 'Loan amount', numberValue: 18000};
-  loanPeriodMonths = {label: 'Loan period months', numberValue: 36};
+  loanAmount = {label: 'Loan amount', numberValue: 1000};
+  loanPeriodMonths = {label: 'Loan period months', numberValue: 12};
   annualInterestRate = {label: 'Annual interest rate', numberValue: 25};
 
   selectedLoanPaymentType: string= "annuity";
