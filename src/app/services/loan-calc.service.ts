@@ -11,6 +11,10 @@ export class LoanCalcService {
 
   selectedLoanPaymentType: string= "annuity";
 
+  monthlyPayment: number = 0;
+  totalAmountPayments: number = 0;
+  totalAmountOverpayments: number = 0;
+
   constructor() { 
   }
 }

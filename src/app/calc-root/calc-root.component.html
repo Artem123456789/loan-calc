@@ -11,7 +11,7 @@
         [(numberValue)]="loanCalc.annualInterestRate.numberValue"></calc-number-field>
     </div>
 </div>
-<loan-info [loanAmount]="loanCalc.loanAmount.numberValue"
-[loanPerionMonths]="loanCalc.loanPeriodMonths.numberValue"
-[annualInterestRate]="loanCalc.annualInterestRate.numberValue"
+<loan-info [monthlyPayment]="loanCalc.monthlyPayment"
+[totalAmountPayments]="loanCalc.totalAmountPayments"
+[totalAmountOverpayments]="loanCalc.totalAmountOverpayments"
 [paymentType]="loanCalc.selectedLoanPaymentType"></loan-info>
