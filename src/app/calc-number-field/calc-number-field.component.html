@@ -1,0 +1,6 @@
+<label [for]="labelText" class="field-label">{{ labelText }}</label>
+<input type="number" min="0" class="field-inp field-number-inp" 
+[name]="labelText" 
+[id]="labelText"
+[ngModel]="numberValue"
+(ngModelChange)="onNumberValueChange($event)">
