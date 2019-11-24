@@ -20,4 +20,8 @@ export class LoanInfoComponent implements OnInit, DoCheck {
   @Input() totalAmountPayments: number;
   @Input() totalAmountOverpayments: number;
   @Input() paymentType: string;
+
+  monthlyPaymentLabel: string = 'Monthly payment';
+  totalAmountPaymentsLabel: string = 'Total mount payments';
+  totalAmountOverpaymentsLabel: string = 'Total amount overpayments';
 }

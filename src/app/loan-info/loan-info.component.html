@@ -1,12 +1,12 @@
 <div class="loan-info-property">
-    <span class="loan-info-label">{{ monthlyPayment.label }}</span>
-    <span class="loan-info-value">{{ monthlyPayment.numberValue | currency:'USD':'symbol':'1.1-1' }}</span>
+    <span class="loan-info-label">{{ monthlyPaymentLabel }}</span>
+    <span class="loan-info-value">{{ monthlyPayment | currency:'USD':'symbol':'1.1-1' }}</span>
 </div>
 <div class="loan-info-property">
-    <span class="loan-info-label">{{ totalAmountPayments.label }}</span>
-    <span class="loan-info-value">{{ totalAmountPayments.numberValue | currency:'USD':'symbol':'1.1-1' }}</span>
+    <span class="loan-info-label">{{ totalAmountPaymentsLabel }}</span>
+    <span class="loan-info-value">{{ totalAmountPayments | currency:'USD':'symbol':'1.1-1' }}</span>
 </div>
 <div class="loan-info-property">
-    <span class="loan-info-label">{{ totalAmountOverpayments.label }}</span>
-    <span class="loan-info-value">{{ totalAmountOverpayments.numberValue | currency:'USD':'symbol':'1.1-1' }}</span>
+    <span class="loan-info-label">{{ totalAmountOverpaymentsLabel }}</span>
+    <span class="loan-info-value">{{ totalAmountOverpayments | currency:'USD':'symbol':'1.1-1' }}</span>
 </div>

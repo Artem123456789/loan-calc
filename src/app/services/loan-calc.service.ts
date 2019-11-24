@@ -15,6 +15,8 @@ export class LoanCalcService {
   totalAmountPayments: number = 0;
   totalAmountOverpayments: number = 0;
 
+  differentedLoanPayment: Array<any>;
+
   constructor() { 
   }
 }
