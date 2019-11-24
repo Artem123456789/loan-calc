@@ -18,7 +18,7 @@ export class CalcRootComponent implements OnInit, DoCheck {
   ngDoCheck(){
     const COUNT_MONTHS_YEAR: number = 12;
     let monthlyInterestRate: number = this.loanCalc.annualInterestRate.numberValue / (100 * COUNT_MONTHS_YEAR);
-    if(this.loanCalc.selectedLoanPaymentType = "annuity")
+    if(this.loanCalc.selectedLoanPaymentType == "annuity")
     {
       this.loanCalc.monthlyPayment = Math.ceil(
         this.loanCalc.loanAmount.numberValue * (
@@ -32,16 +32,22 @@ export class CalcRootComponent implements OnInit, DoCheck {
       this.loanCalc.totalAmountOverpayments = Math.ceil(this.loanCalc.totalAmountPayments - this.loanCalc.loanAmount.numberValue);
     }else{
       let currentDate: Date = new Date();
-      let interestRate = this.loanCalc.annualInterestRate.numberValue / 100;
+      let countDaysYear: number = 0;
+      let interestRate: number = this.loanCalc.annualInterestRate.numberValue / 100;
       let amountPrincipalAmountLoan: number = this.loanCalc.loanAmount.numberValue;
       let loanBody: number = this.loanCalc.loanAmount.numberValue / this.loanCalc.loanPeriodMonths.numberValue;
       let paymentsSumm: number = 0;
+      let monthlyInterest: number = 0;
+      this.loanCalc.differentedLoanPayment = [];
+      currentDate.setDate(0);
       while(amountPrincipalAmountLoan > 0){
         currentDate.setMonth(currentDate.getMonth() + 1);
-        this.loanCalc.differentedLoanPayment.push({date: `${currentDate.getMonth()}/${currentDate.getFullYear()}`, payment: amountPrincipalAmountLoan * interestRate / currentDate.getFullYear() * currentDate.getMonth()});
+        countDaysYear = currentDate.getFullYear() % 400 == 0 || (currentDate.getFullYear() % 100 != 0 && currentDate.getFullYear() % 4 == 0) ? 366 : 365;
+        monthlyInterest = amountPrincipalAmountLoan * interestRate / countDaysYear * this.getCountDaysMonth(currentDate.getFullYear(), currentDate.getMonth());
+        this.loanCalc.differentedLoanPayment.push({date: `${currentDate.getMonth() + 1}/${currentDate.getFullYear()}`, 
+        payment: loanBody + monthlyInterest});
         amountPrincipalAmountLoan -= loanBody;
       }
-      console.log(this.loanCalc.differentedLoanPayment);
       this.loanCalc.differentedLoanPayment.forEach((val)=>{
         paymentsSumm += val.payment;
       });
@@ -49,6 +55,10 @@ export class CalcRootComponent implements OnInit, DoCheck {
       this.loanCalc.totalAmountPayments = paymentsSumm;
       this.loanCalc.totalAmountOverpayments = paymentsSumm - this.loanCalc.loanAmount.numberValue;
     }
+  }
+
+  getCountDaysMonth(year: number, month: number): number{
+    return new Date(year, month, 0).getDate();
   }
 
 }

@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class LoanCalcService {
 
-  loanAmount = {label: 'Loan amount', numberValue: 1000};
-  loanPeriodMonths = {label: 'Loan period months', numberValue: 12};
-  annualInterestRate = {label: 'Annual interest rate', numberValue: 10};
+  loanAmount = {label: 'Loan amount', numberValue: 18000};
+  loanPeriodMonths = {label: 'Loan period months', numberValue: 36};
+  annualInterestRate = {label: 'Annual interest rate', numberValue: 25};
 
   selectedLoanPaymentType: string= "annuity";
 
@@ -15,7 +15,7 @@ export class LoanCalcService {
   totalAmountPayments: number = 0;
   totalAmountOverpayments: number = 0;
 
-  differentedLoanPayment: Array<any>;
+  differentedLoanPayment: Array<any> = [];
 
   constructor() { 
   }
