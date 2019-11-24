@@ -16,8 +16,8 @@ export class CalcRootComponent implements OnInit, DoCheck {
   }
 
   ngDoCheck(){
-    const COUNT_MONTHS_YEAR = 12;
-    let monthlyInterestRate = this.loanCalc.annualInterestRate.numberValue / (100 * COUNT_MONTHS_YEAR);
+    const COUNT_MONTHS_YEAR: number = 12;
+    let monthlyInterestRate: number = this.loanCalc.annualInterestRate.numberValue / (100 * COUNT_MONTHS_YEAR);
     if(this.loanCalc.selectedLoanPaymentType = "annuity")
     {
       this.loanCalc.monthlyPayment = Math.ceil(
@@ -29,9 +29,25 @@ export class CalcRootComponent implements OnInit, DoCheck {
         )
       );
       this.loanCalc.totalAmountPayments = Math.ceil(this.loanCalc.monthlyPayment * this.loanCalc.loanPeriodMonths.numberValue);
-      this.loanCalc.totalAmountPayments = Math.ceil(this.loanCalc.totalAmountPayments - this.loanCalc.loanAmount.numberValue);
+      this.loanCalc.totalAmountOverpayments = Math.ceil(this.loanCalc.totalAmountPayments - this.loanCalc.loanAmount.numberValue);
     }else{
-      this.loanCalc.monthlyPayment = 0;
+      let currentDate: Date = new Date();
+      let interestRate = this.loanCalc.annualInterestRate.numberValue / 100;
+      let amountPrincipalAmountLoan: number = this.loanCalc.loanAmount.numberValue;
+      let loanBody: number = this.loanCalc.loanAmount.numberValue / this.loanCalc.loanPeriodMonths.numberValue;
+      let paymentsSumm: number = 0;
+      while(amountPrincipalAmountLoan > 0){
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        this.loanCalc.differentedLoanPayment.push({date: `${currentDate.getMonth()}/${currentDate.getFullYear()}`, payment: amountPrincipalAmountLoan * interestRate / currentDate.getFullYear() * currentDate.getMonth()});
+        amountPrincipalAmountLoan -= loanBody;
+      }
+      console.log(this.loanCalc.differentedLoanPayment);
+      this.loanCalc.differentedLoanPayment.forEach((val)=>{
+        paymentsSumm += val.payment;
+      });
+      this.loanCalc.monthlyPayment = paymentsSumm / this.loanCalc.differentedLoanPayment.length;
+      this.loanCalc.totalAmountPayments = paymentsSumm;
+      this.loanCalc.totalAmountOverpayments = paymentsSumm - this.loanCalc.loanAmount.numberValue;
     }
   }
 
