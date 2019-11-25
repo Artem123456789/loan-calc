@@ -12,6 +12,6 @@ export class DifferentiatedPaymentsInfoComponent implements OnInit {
   ngOnInit() {
   }
 
-  @Input() dirrerentiedPayments: Array<any>;
+  @Input() dirrerentiedPayments: Array<Object>;
 
 }

@@ -16,48 +16,7 @@ export class CalcRootComponent implements OnInit, DoCheck {
   }
 
   ngDoCheck(){
-    const COUNT_MONTHS_YEAR: number = 12;
-    let monthlyInterestRate: number = this.loanCalc.annualInterestRate.numberValue / (100 * COUNT_MONTHS_YEAR);
-    if(this.loanCalc.selectedLoanPaymentType == "annuity")
-    {
-      this.loanCalc.monthlyPayment = Math.ceil(
-        this.loanCalc.loanAmount.numberValue * (
-          monthlyInterestRate + (monthlyInterestRate / 
-            (
-              Math.pow(1 + monthlyInterestRate, this.loanCalc.loanPeriodMonths.numberValue) - 1
-            ))
-        )
-      );
-      this.loanCalc.totalAmountPayments = Math.ceil(this.loanCalc.monthlyPayment * this.loanCalc.loanPeriodMonths.numberValue);
-      this.loanCalc.totalAmountOverpayments = Math.ceil(this.loanCalc.totalAmountPayments - this.loanCalc.loanAmount.numberValue);
-    }else{
-      let currentDate: Date = new Date();
-      let countDaysYear: number = 0;
-      let interestRate: number = this.loanCalc.annualInterestRate.numberValue / 100;
-      let amountPrincipalAmountLoan: number = this.loanCalc.loanAmount.numberValue;
-      let loanBody: number = this.loanCalc.loanAmount.numberValue / this.loanCalc.loanPeriodMonths.numberValue;
-      let paymentsSumm: number = 0;
-      let monthlyInterest: number = 0;
-      this.loanCalc.differentedLoanPayment = [];
-      while(amountPrincipalAmountLoan > 0){
-        currentDate.setMonth(currentDate.getMonth() + 1);
-        countDaysYear = currentDate.getFullYear() % 400 == 0 || (currentDate.getFullYear() % 100 != 0 && currentDate.getFullYear() % 4 == 0) ? 366 : 365;
-        monthlyInterest = amountPrincipalAmountLoan * interestRate / countDaysYear * this.getCountDaysMonth(currentDate.getFullYear(), currentDate.getMonth());
-        this.loanCalc.differentedLoanPayment.push({date: currentDate, 
-        summ: loanBody + monthlyInterest});
-        amountPrincipalAmountLoan -= loanBody;
-      }
-      this.loanCalc.differentedLoanPayment.forEach((val)=>{
-        paymentsSumm += val.summ;
-      });
-      this.loanCalc.monthlyPayment = paymentsSumm / this.loanCalc.differentedLoanPayment.length;
-      this.loanCalc.totalAmountPayments = paymentsSumm;
-      this.loanCalc.totalAmountOverpayments = paymentsSumm - this.loanCalc.loanAmount.numberValue;
-    }
-  }
-
-  getCountDaysMonth(year: number, month: number): number{
-    return new Date(year, month, 0).getDate();
+    this.loanCalc.setMonthlyPayment();
   }
 
 }
