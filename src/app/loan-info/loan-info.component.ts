@@ -15,7 +15,6 @@ export class LoanInfoComponent implements OnInit, DoCheck {
 
   ngDoCheck(){
     if(this.paymentType != 'annuity') this.monthlyPaymentLabel = 'Average monthly payment'; 
-    // console.log(this.monthlyPayment);
   }
 
   @Input() monthlyPayment: number;
@@ -24,6 +23,6 @@ export class LoanInfoComponent implements OnInit, DoCheck {
   @Input() paymentType: string;
 
   monthlyPaymentLabel: string = 'Monthly payment';
-  totalAmountPaymentsLabel: string = 'Total mount payments';
+  totalAmountPaymentsLabel: string = 'Total amount payments';
   totalAmountOverpaymentsLabel: string = 'Total amount overpayments';
 }

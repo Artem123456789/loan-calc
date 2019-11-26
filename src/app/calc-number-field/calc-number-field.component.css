@@ -1,11 +1,5 @@
-:root
-{
-    --label-pc-size: 17px;
-}
-
 :host
 {
-    width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -19,8 +13,42 @@
 
 @media screen and (min-width: 1300px)
 {
-    .field-label
+    :host
     {
-        font-size: var(--label-pc-size);
+        --font-size: 18px;
+        width: 90%;
+    }
+
+    .field-inp
+    {
+        font-size: var(--font-size);
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1300px)
+{
+    :host
+    {
+        --font-size: 20px;
+        width: 90%;
+    }
+
+    .field-inp
+    {
+        font-size: var(--font-size);
+    }
+}
+
+@media screen and (max-width: 600px)
+{
+    :host
+    {
+        --font-size: 22px;
+        width: 100%;
+    }
+
+    .field-inp
+    {
+        font-size: var(--font-size);
     }
 }

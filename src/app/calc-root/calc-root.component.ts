@@ -16,6 +16,7 @@ export class CalcRootComponent implements OnInit, DoCheck {
   }
 
   ngDoCheck(){
+    //updated monthly payment, amount payments, amount overpayments, and differentiated payments list
     this.loanCalc.setMonthlyPayment();
   }
 
