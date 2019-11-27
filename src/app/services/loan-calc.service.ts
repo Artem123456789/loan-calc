@@ -13,7 +13,7 @@ export class LoanCalcService {
   private _loanAmount = {label: 'Loan amount', value: 1000};
   private _loanPeriodMonths = {label: 'Loan period months', value: 12};
   private _annualInterestRate = {label: 'Annual interest rate', value: 25};
-  private _loanPaymentType: string= "annuity";
+  private _loanPaymentType: string= "differentiated";
 
   //information for payment loan properties
   private _monthlyPayment: number = 0;

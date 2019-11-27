@@ -15,23 +15,25 @@
     text-align: end;
 }
 
-@media screen and (min-width: 1300px)
+@media screen and (min-width: 1000px)
 {
     :host
     {
         height: 45%;
+        width: 70%;
     }
 }
 
-@media screen and (min-width: 600px) and (max-width: 1300px)
+@media screen and (min-width: 500px) and (max-width: 1000px)
 {
     :host
     {
         height: 45%;
+        width: 80%;
     }
 }
 
-@media screen and (max-width: 600px)
+@media screen and (max-width: 500px)
 {
     :host
     {

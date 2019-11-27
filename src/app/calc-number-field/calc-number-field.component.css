@@ -9,7 +9,7 @@
     content: ":";
 }
 
-@media screen and (min-width: 1300px)
+@media screen and (min-width: 1000px)
 {
     :host
     {
@@ -20,11 +20,7 @@
 
     .field-inp
     {
-        font-size: 18px;;
-    }
-
-    .field-inp
-    {
+        font-size: 18px;
         width: 60%;
     }
 
@@ -34,32 +30,28 @@
     }
 }
 
-@media screen and (min-width: 600px) and (max-width: 1300px)
+@media screen and (min-width: 500px) and (max-width: 1000px)
 {
     :host
     {
         flex-direction: row;
         align-items: center;
-        width: 90%;
+        width: 100%;
     }
 
     .field-inp
     {
+        width: 60%;
         font-size: 20px;
     }
 
-    .field-inp
-    {
-        width: 60%;
-    }
-
     .field-label
     {
         width: 30%;
     }
 }
 
-@media screen and (max-width: 600px)
+@media screen and (max-width: 500px)
 {
     :host
     {
@@ -73,10 +65,6 @@
     .field-inp
     {
         font-size: 22px;
-    }
-
-    .field-inp
-    {
         width: 100%;
     }
 
