@@ -11,6 +11,16 @@
     content: ":";
 }
 
+.field-inp
+{
+    width: 60%;
+}
+
+.field-label
+{
+    width: 30%;
+}
+
 @media screen and (min-width: 1300px)
 {
     :host
