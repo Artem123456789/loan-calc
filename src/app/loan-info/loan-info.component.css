@@ -11,11 +11,8 @@
 .loan-info-property
 {
     width: 100%;
-    height: 30%;
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
-    align-items: center;
 }
 
 .loan-info-label::after
@@ -44,6 +41,7 @@
     .loan-info-property
     {
         flex-direction: row;
+        align-items: center;
     }
 }
 
@@ -57,13 +55,13 @@
 
     .loan-info-property
     {
-        flex-direction: column;
+        flex-direction: row;
+        align-items: center;
     }
 
     .loan-info-property > *
     {
         width: 100%;
-        text-align: center;
     }
 }
 
@@ -78,11 +76,12 @@
     .loan-info-property
     {
         flex-direction: column;
+        align-items: flex-start;
+        height: 30%;
     }
 
     .loan-info-property > *
     {
         width: 100%;
-        text-align: center;
     }
 }

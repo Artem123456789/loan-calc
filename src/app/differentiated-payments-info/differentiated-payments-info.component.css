@@ -14,3 +14,28 @@
 {
     text-align: end;
 }
+
+@media screen and (min-width: 1300px)
+{
+    :host
+    {
+        height: 45%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1300px)
+{
+    :host
+    {
+        height: 45%;
+    }
+}
+
+@media screen and (max-width: 600px)
+{
+    :host
+    {
+        height: 35%;
+        font-size: 16px;
+    }
+}

@@ -1,9 +1,7 @@
 :host
 {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
 }
 
 .payment-type-label::after
@@ -15,13 +13,14 @@
 {
     :host
     {
-        --font-size: 18px;
+        flex-direction: row;
+        align-items: center;
         width: 90%;
     }
 
     .loan-type
     {
-        font-size: var(--font-size);
+        font-size: 18px;
     }
 }
 
@@ -29,13 +28,14 @@
 {
     :host
     {
-        --font-size: 20px;
+        flex-direction: row;
+        align-items: center;
         width: 90%;
     }
 
     .loan-type
     {
-        font-size: var(--font-size);
+        font-size: 20px;
     }
 }
 
@@ -43,12 +43,14 @@
 {
     :host
     {
-        --font-size: 22px;
+        flex-direction: column;
+        align-items: flex-start;
         width: 100%;
+        height: 15%;
     }
 
     .loan-type
     {
-        font-size: var(--font-size);
+        font-size: 22px;
     }
 }

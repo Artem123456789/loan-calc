@@ -37,8 +37,6 @@
     justify-content: space-between;
     align-items: center;
     height: 40%;
-    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
-    border-radius: 15px;
     padding: 10px;
 }
 
@@ -46,14 +44,13 @@
 {
     :host
     {
-        --font-size: 18px;
-        --padding: 15px;
-        font-size: var(--font-size);
-        padding: var(--padding);
+        font-size: 18px;
+        padding: 15px;;
     }
 
     .calc-main-info
     {
+        height: 40%;
         flex-direction: row;
     }
 
@@ -68,14 +65,13 @@
 {
     :host
     {
-        --padding: 15px;
-        --font-size: 20px;
-        font-size: var(--font-size);
-        padding: var(--padding);
+        font-size: 20px;
+        padding: 15px;
     }
 
     .calc-main-info
     {
+        height: 40%;
         flex-direction: row;
     }
 
@@ -90,16 +86,15 @@
 {
     :host
     {
-        --font-size: 22px;
-        --padding: 10px;
-        font-size: var(--font-size);
-        padding: var(--padding);
-        height: 1200px;
+        font-size: 22px;
+        padding: 10px;
+        height: 1400px;
     }
 
     .calc-main-info
     {
         flex-direction: column;
+        height: 60%;
     }
 
     .calc-interface

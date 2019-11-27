@@ -1,9 +1,7 @@
 :host
 {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
 }
 
 .field-label::after
@@ -11,27 +9,28 @@
     content: ":";
 }
 
-.field-inp
-{
-    width: 60%;
-}
-
-.field-label
-{
-    width: 30%;
-}
-
 @media screen and (min-width: 1300px)
 {
     :host
     {
-        --font-size: 18px;
+        flex-direction: row;
+        align-items: center;
         width: 90%;
     }
 
     .field-inp
     {
-        font-size: var(--font-size);
+        font-size: 18px;;
+    }
+
+    .field-inp
+    {
+        width: 60%;
+    }
+
+    .field-label
+    {
+        width: 30%;
     }
 }
 
@@ -39,13 +38,24 @@
 {
     :host
     {
-        --font-size: 20px;
+        flex-direction: row;
+        align-items: center;
         width: 90%;
     }
 
     .field-inp
     {
-        font-size: var(--font-size);
+        font-size: 20px;
+    }
+
+    .field-inp
+    {
+        width: 60%;
+    }
+
+    .field-label
+    {
+        width: 30%;
     }
 }
 
@@ -53,12 +63,25 @@
 {
     :host
     {
-        --font-size: 22px;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 15%;
         width: 100%;
+        
     }
 
     .field-inp
     {
-        font-size: var(--font-size);
+        font-size: 22px;
+    }
+
+    .field-inp
+    {
+        width: 100%;
+    }
+
+    .field-label
+    {
+        width: 70%;
     }
 }
