@@ -1,5 +1,5 @@
 <label [for]="labelText" class="field-label">{{ labelText }}</label>
-<input type="number" min="0" class="field-inp field-number-inp" 
+<input type="number" min="0" max="1000000000" step="100000" class="field-inp field-number-inp" 
 [name]="labelText" 
 [id]="labelText"
 [ngModel]="numberValue"

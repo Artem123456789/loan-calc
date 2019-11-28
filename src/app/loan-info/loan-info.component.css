@@ -19,16 +19,6 @@
     content: ":";
 }
 
-.loan-info-value
-{
-    width: 30%;
-}
-
-.loan-info-label
-{
-    width: 60%;
-}
-
 @media screen and (min-width: 1000px)
 {
     :host
@@ -49,6 +39,12 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+        width: 60%;
+    }
+
+    .loan-info-label
+    {
+        width: 40%;
     }
 }
 
@@ -73,11 +69,12 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+        width: 30%;
     }
 
-    .loan-info-property > *
+    .loan-info-label
     {
-        width: 100%;
+        width: 40%;
     }
 }
 
