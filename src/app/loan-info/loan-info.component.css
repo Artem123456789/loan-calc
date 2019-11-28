@@ -43,6 +43,13 @@
         align-items: center;
         justify-content: space-around;
     }
+
+    .loan-info-value
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
 }
 
 @media screen and (min-width: 550px) and (max-width: 1000px)
@@ -61,16 +68,16 @@
         height: 25%;
     }
 
-    .loan-info-property > *
-    {
-        width: 100%;
-    }
-
     .loan-info-value
     {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+    }
+
+    .loan-info-property > *
+    {
+        width: 100%;
     }
 }
 
