@@ -8,11 +8,28 @@
 {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
+    border: 1px solid #43779E;
 }
 
-.dirrerentied-payments-amount
+.dirrerentied-payments-table tr
 {
-    text-align: end;
+    border: inherit;
+}
+
+.dirrerentied-payments-head
+{
+    font-weight: normal;
+}
+
+.dirrerentied-payments-table
+{
+    text-align: center;
+}
+
+.dirrerentied-payments-value, .dirrerentied-payments-head
+{
+    padding: .3em;
 }
 
 @media screen and (min-width: 1000px)

@@ -19,6 +19,11 @@
     content: ":";
 }
 
+.loan-info-label
+{
+    color: #43779E;
+}
+
 @media screen and (min-width: 1000px)
 {
     :host

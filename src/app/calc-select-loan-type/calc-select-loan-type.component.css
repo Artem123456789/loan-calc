@@ -2,11 +2,19 @@
 {
     display: flex;
     justify-content: space-between;
+    color: #43779E;
 }
 
 .payment-type-label::after
 {
     content: ":";
+}
+
+.loan-type
+{
+    background-color: #EFF3F5;
+    padding: 0 2%;
+    border: 0;
 }
 
 @media screen and (min-width: 1000px)
@@ -16,11 +24,13 @@
         flex-direction: row;
         align-items: center;
         width: 90%;
+        height: 10%;
     }
 
     .loan-type
     {
         font-size: 18px;
+        height: 100%;
     }
 }
 
@@ -37,6 +47,7 @@
     .loan-type
     {
         font-size: 20px;
+        height: 100%;
     }
 }
 
@@ -53,5 +64,6 @@
     .loan-type
     {
         font-size: 22px;
+        height: 50%;
     }
 }
