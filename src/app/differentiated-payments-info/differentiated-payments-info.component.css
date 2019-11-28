@@ -20,11 +20,11 @@
     :host
     {
         height: 45%;
-        width: 70%;
+        width: 90%;
     }
 }
 
-@media screen and (min-width: 500px) and (max-width: 1000px)
+@media screen and (min-width: 550px) and (max-width: 1000px)
 {
     :host
     {
@@ -33,7 +33,7 @@
     }
 }
 
-@media screen and (max-width: 500px)
+@media screen and (max-width: 550px)
 {
     :host
     {
