@@ -9,15 +9,14 @@ import { LoanCalcService } from '../services/loan-calc.service';
 
 export class CalcRootComponent implements OnInit, DoCheck {
 
-  constructor(private loanCalc: LoanCalcService) {
+  constructor(public loanCalc: LoanCalcService /*stores main info about loan*/) {
   }
 
   ngOnInit() {
   }
 
   ngDoCheck(){
-    //updated monthly payment, amount payments, amount overpayments, and differentiated payments list
-    this.loanCalc.setMonthlyPayment();
+    this.loanCalc.setMonthlyPayment();//updated monthly payment, amount payments, amount overpayments, and differentiated payments list
   }
 
 }

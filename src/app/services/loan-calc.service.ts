@@ -6,7 +6,7 @@ import { LoanCalcInfoService } from './loan-calc-info.service';
 })
 export class LoanCalcService {
 
-  constructor(private loanInfo: LoanCalcInfoService) { 
+  constructor(private loanInfo: LoanCalcInfoService /*calculate loan main indicators*/) { 
   }
 
   //basic loan info properties
@@ -19,18 +19,18 @@ export class LoanCalcService {
   private _monthlyPayment: number = 0;
   private _totalAmountPayments: number = 0;
   private _totalAmountOverpayments: number = 0;
-  private _differentedLoanPayment: Array<Object> = [];
+  private _differentedLoanPayment: Array<any> = [];
 
   //getters and setters for properties
-  public get loanAmount(): Object{
+  public get loanAmount(): any{
     return this._loanAmount;
   }
 
-  public get loanPeriodMonths(): Object{
+  public get loanPeriodMonths(): any{
     return this._loanPeriodMonths;
   }
 
-  public get annualInterestRate(): Object{
+  public get annualInterestRate(): any{
     return this._annualInterestRate;
   }
 
@@ -54,11 +54,11 @@ export class LoanCalcService {
     return this._totalAmountOverpayments;
   }
 
-  public get differentedLoanPayment(): Array<Object>{
+  public get differentedLoanPayment(): Array<any>{
     return this._differentedLoanPayment;
   }
 
-  public set differentedLoanPayment(differentedLoanPayment: Array<Object>){
+  public set differentedLoanPayment(differentedLoanPayment: Array<any>){
     this._differentedLoanPayment = [...differentedLoanPayment];
   }
 

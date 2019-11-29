@@ -12,7 +12,7 @@ export class LoanCalcInfoService {
   private _monthlyPayment: number = 0;
   private _totalAmountPayments: number = 0;
   private _totalAmountOverpayments: number = 0;
-  private _differentedLoanPayment: Array<Object> = []; 
+  private _differentedLoanPayment: Array<any> = []; 
 
   //getters and setters for properties
   public get monthlyPayment(): number{
@@ -27,7 +27,7 @@ export class LoanCalcInfoService {
     return this._totalAmountOverpayments;
   }
 
-  public get differentedLoanPayment(): Array<Object>{
+  public get differentedLoanPayment(): Array<any>{
     return this._differentedLoanPayment;
   }
 
