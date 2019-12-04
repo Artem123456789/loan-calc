@@ -1,5 +1,5 @@
-<label for="calc-loan-payment-type" class="payment-type-label">Payment type</label>
-<select class="loan-type" required [ngModel]="paymentTypeVal" 
+<label for="calc-loan-payment-type" class="payment-type-label loan-calculator-text-color">Payment type</label>
+<select class="loan-type loan-calculator-data-numbers loan-calculator-control" required [ngModel]="paymentTypeVal" 
 (ngModelChange)="onPaymentTypeValChange($event)" 
 name="calc-loan-payment-type" id="calc-loan-payment-type">
     <option value="annuity">Annuity</option>

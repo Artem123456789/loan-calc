@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+.loan-calculator-text-color
+{
+    color: #43779E;
+}
+
+.loan-calculator-data-numbers
+{
+    color: black;
+}
+
+.loan-calculator-control
+{
+    background-color: #EFF3F5;
+}

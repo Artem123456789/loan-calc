@@ -1,10 +1,10 @@
 <table class="dirrerentied-payments-table">
     <tr>
-        <th class="dirrerentied-payments-head">Date</th>
-        <th class="dirrerentied-payments-head">Payment</th>
+        <th class="dirrerentied-payments-head loan-calculator-text-color">Date</th>
+        <th class="dirrerentied-payments-head loan-calculator-text-color">Payment</th>
     </tr>
     <tr *ngFor="let payment of dirrerentiedPayments;let index = i;">
-        <td class="dirrerentied-payments-value dirrerentied-payments-date">{{ payment.date | date:'MM/dd/yyyy' }}</td>
-        <td class="dirrerentied-payments-value dirrerentied-payments-amount">{{ payment.payment | currency:'USD':'symbol':'1.1-3' }}</td>
+        <td class="dirrerentied-payments-value dirrerentied-payments-date loan-calculator-data-numbers">{{ payment.date | date:'MM/dd/yyyy' }}</td>
+        <td class="dirrerentied-payments-value dirrerentied-payments-amount loan-calculator-data-numbers">{{ payment.payment | currency:'USD':'symbol':'1.1-3' }}</td>
     </tr>
 </table>

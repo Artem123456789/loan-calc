@@ -2,7 +2,6 @@
 {
     display: flex;
     justify-content: space-between;
-    color: #43779E;
 }
 
 .payment-type-label::after
@@ -12,7 +11,6 @@
 
 .loan-type
 {
-    background-color: #EFF3F5;
     padding: 0 2%;
     border: 0;
 }
